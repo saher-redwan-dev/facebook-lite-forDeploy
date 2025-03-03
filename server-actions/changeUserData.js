@@ -1,9 +1,9 @@
 "use server";
 
-import useFetch_server from "@/components/custom-hooks/useFetch_server";
+import fetchData from "@/components/custom-hooks/fetchData";
 
 export default async function changeUserData(id, newData) {
-  const { data: res } = await useFetch_server(
+  const { data: res } = await fetchData(
     "PUT",
     "http://localhost:3000/api/users",
     { id, ...newData }

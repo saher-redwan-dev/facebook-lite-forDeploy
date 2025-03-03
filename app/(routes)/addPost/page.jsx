@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Button from "@/components/basic-items/Button";
-import useFetch_server from "@/components/custom-hooks/useFetch_server";
+import fetchData from "@/components/custom-hooks/fetchData";
 
 import { useForm } from "react-hook-form";
 import { optional, z } from "zod";
@@ -44,7 +44,7 @@ export default function AddTask() {
   const onSubmit = async (data) => {
     // setLoading(true)
 
-    const { data: data_fetch } = await useFetch_server(
+    const { data: data_fetch } = await fetchData(
       "POST",
       "http://localhost:3000/api/posts",
       {

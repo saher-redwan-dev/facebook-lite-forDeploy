@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import LoadingSpinner from "../basic-items/LoadingSpinner";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -33,7 +33,7 @@ export default function DeletePostAlert({
 
     // if (confirmed) {
     setLoading(true);
-    const { data } = await useFetch_server(
+    const { data } = await fetchData(
       "DELETE",
       `http://localhost:3000/api/posts?id=${id}`
     );

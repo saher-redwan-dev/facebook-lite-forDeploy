@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 // import Modal from "../basic-items/Modal";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -47,7 +47,7 @@ export default function EditComment({
     console.log("grate Job");
     setLoading(true);
 
-    // const { data } = await useFetch_server(
+    // const { data } = await fetchData(
     //   "POST",
     //   "http://localhost:3000/api/fakePostApi",
     //   {
@@ -59,7 +59,7 @@ export default function EditComment({
 
     // console.log("data is:", data);
 
-    // const { data } = await useFetch_server(
+    // const { data } = await fetchData(
     //   "PUT",
     //   "http://localhost:3000/api/edit-comment",
     //   {

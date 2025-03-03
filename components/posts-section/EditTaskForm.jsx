@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "../basic-items/Button";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 
 export default function EditTaskForm({ id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
@@ -16,7 +16,7 @@ export default function EditTaskForm({ id, title, description }) {
     e.preventDefault();
 
     setLoading(true);
-    const { data } = await useFetch_server(
+    const { data } = await fetchData(
       "PUT",
       `http://localhost:3000/api/posts/${id}`,
       {

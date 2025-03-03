@@ -38,10 +38,22 @@ export default function MainLinksMenu({
               console.log("from denied");
               return;
             } else {
-              return useLink(link, toggleOpenSheet);
+              // return LinkItem(link, toggleOpenSheet);
+              return (
+                <LinkItem
+                  key={link.link}
+                  link={link}
+                  toggleOpenSheet={toggleOpenSheet}
+                />
+              );
             }
           } else {
-            return useLink(link, toggleOpenSheet);
+            // return LinkItem(link, toggleOpenSheet);
+            <LinkItem
+              key={link.link}
+              link={link}
+              toggleOpenSheet={toggleOpenSheet}
+            />;
           }
         })}
       </div>
@@ -52,7 +64,7 @@ export default function MainLinksMenu({
 const classOfActive =
   "flex items-center gap-1.5 hover:bg-[var(--so-light-color)] py-1 rounded-[0px_var(--border-radius)_var(--border-radius)_0px]";
 
-function useLink(link, toggleOpenSheet) {
+function LinkItem({ link, toggleOpenSheet }) {
   // this for button such as login button.
   if (link.link == "?loggedOut") {
     return (

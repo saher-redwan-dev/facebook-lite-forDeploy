@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Modal from "../basic-items/Modal";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import LoadingSpinner from "../basic-items/LoadingSpinner";
 import SendComment from "./SendComment";
 import SingleComment from "./SingleComment";
@@ -42,7 +42,7 @@ export default function CommentsOfPost({ _id_post, comments_count }) {
       setLoadingMore(true);
     }
 
-    const { data } = await useFetch_server(
+    const { data } = await fetchData(
       "GET",
       `http://localhost:3000/api/comments?postid=${_id_post}&page_num=${currentPageNumOfComments}`
     );

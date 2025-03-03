@@ -1,4 +1,4 @@
-export default async function useFetch_server(type, url, sentData) {
+export default async function fetchData(type, url, sentData) {
   let data = undefined;
 
   // const BASE_URL = "http://localhost:3000/";

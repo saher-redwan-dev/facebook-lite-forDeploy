@@ -3,7 +3,7 @@
 import PostsList_Profile from "@/components/posts-section/PostsList_Profile";
 import Button from "@/components/basic-items/Button";
 import LoadingSpinner from "@/components/basic-items/LoadingSpinner";
-import useFetch_server from "@/components/custom-hooks/useFetch_server";
+import fetchData from "@/components/custom-hooks/fetchData";
 import { useGlobalContext } from "@/context/store";
 import changeUserData from "@/server-actions/changeUserData";
 import { updateNameForPosts } from "@/server-actions/updateDataAfterChangingUserData";
@@ -40,7 +40,7 @@ export default function Profile() {
     async function getVisitedUserInfo() {
       if (!isCurrentUserPage && visitedUser == undefined && isRenderedPage) {
         // here is visited user, then get his info
-        const { data: userInfo } = await useFetch_server(
+        const { data: userInfo } = await fetchData(
           "POST",
           "http://localhost:3000/api/users",
           { userId }

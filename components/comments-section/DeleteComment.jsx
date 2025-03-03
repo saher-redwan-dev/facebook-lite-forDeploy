@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import LoadingSpinner from "../basic-items/LoadingSpinner";
 // import Button from "@/basic-items/Button";
 
@@ -32,7 +32,7 @@ export default function DeleteComment({
   const [loading, setLoading] = useState(false);
   async function handleDelete() {
     setLoading(true);
-    const { data } = await useFetch_server(
+    const { data } = await fetchData(
       "DELETE",
       `http://localhost:3000/api/comments?_id_post=${_id_post}&_id_comment=${_id_comment}`
       // {

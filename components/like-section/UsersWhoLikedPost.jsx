@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "../basic-items/Modal";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import Link from "../basic-items/Link";
 import LoadingSpinner from "../basic-items/LoadingSpinner";
 
@@ -16,7 +16,7 @@ export default function UsersWhoLikedPost({ _id_post, countOfLikes }) {
   async function getUsersWhoLikePost() {
     toggleModal();
     setLoading(true);
-    const { data } = await useFetch_server(
+    const { data } = await fetchData(
       "POST",
       "http://localhost:3000/api/getUsersWhoLikePost",
       { post_id: _id_post }

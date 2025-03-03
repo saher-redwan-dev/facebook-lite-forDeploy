@@ -7,7 +7,7 @@ import changeUserData from "@/server-actions/changeUserData";
 import { updateNameForPosts } from "@/server-actions/updateDataAfterChangingUserData";
 import { useSession } from "next-auth/react";
 import UploadButtonItem from "../uploadthing-items/UploadButtonItem";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 
 export default function EditUserInfo({
   loadingStuffForUser,

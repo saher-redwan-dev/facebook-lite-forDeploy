@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "../basic-items/Modal";
 import { useRouter } from "next/navigation";
 import Button from "@/components/basic-items/Button";
-import useFetch_server from "@/components/custom-hooks/useFetch_server";
+import fetchData from "@/components/custom-hooks/fetchData";
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -114,7 +114,7 @@ const AddNewPost = ({ posts, setPosts }) => {
       }
     }
 
-    const { data: data_fetch } = await useFetch_server(
+    const { data: data_fetch } = await fetchData(
       "POST",
       "http://localhost:3000/api/posts",
       postData()
@@ -257,7 +257,7 @@ export default AddNewPost;
 // import Modal from "../basic-items/Modal";
 // import { useRouter } from "next/navigation";
 // import Button from "@/components/basic-items/Button";
-// import useFetch_server from "@/components/custom-hooks/useFetch_server";
+// import fetchData from "@/components/custom-hooks/fetchData";
 
 // import { useForm } from "react-hook-form";
 // import { z } from "zod";
@@ -342,7 +342,7 @@ export default AddNewPost;
 //     });
 
 //     // console.log("data__ data__ data__");
-//     // const { data: data_fetch } = useFetch_server(
+//     // const { data: data_fetch } = fetchData(
 //     //   "POST",
 //     //   "http://localhost:3000/api/posts",
 //     //   {

@@ -1,6 +1,6 @@
 "use client";
 
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 // import { getServerSession } from "next-auth";
 import { useEffect, useRef, useState } from "react";
 import LoadingSpinner from "../basic-items/LoadingSpinner";
@@ -33,7 +33,7 @@ export default function PostsList() {
     }
 
     try {
-      const { data } = await useFetch_server(
+      const { data } = await fetchData(
         "GET",
         `http://localhost:3000/api/posts?page_num=${currentPageNumOfPosts}`
       );

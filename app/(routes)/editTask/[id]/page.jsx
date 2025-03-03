@@ -1,9 +1,9 @@
 import EditTaskForm from "@/components/posts-section/EditTaskForm";
-import useFetch_server from "@/components/custom-hooks/useFetch_server";
+import fetchData from "@/components/custom-hooks/fetchData";
 
 const getTaskById = async (id) => {
   try {
-    const { data } = await useFetch_server(
+    const { data } = await fetchData(
       "GET",
       `http://localhost:3000/api/posts/${id}`
     );

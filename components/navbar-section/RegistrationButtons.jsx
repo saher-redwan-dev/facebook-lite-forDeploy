@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import SignOut from "./SignOut";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import getUserInfoByEmail from "@/server-actions/getUserInfoByEmail";
 import MenuNavSection from "./MenuNavSection";
 
@@ -12,7 +12,7 @@ export default async function RegistrationButtons() {
 
   // const userInfo = async () => {
   //   if (session?.user?.email) {
-  //     const { data: info } = await useFetch_server(
+  //     const { data: info } = await fetchData(
   //       "POST",
   //       "http://localhost:3000/api/findUserByEmail",
   //       session?.user?.email

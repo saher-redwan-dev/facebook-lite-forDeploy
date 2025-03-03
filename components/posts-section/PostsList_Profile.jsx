@@ -1,6 +1,6 @@
 "use client";
 
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 // import { getServerSession } from "next-auth";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../basic-items/LoadingSpinner";
@@ -36,7 +36,7 @@ export default function PostsList() {
     }
 
     try {
-      const { data } = await useFetch_server(
+      const { data } = await fetchData(
         "GET",
         `http://localhost:3000/api/posts?userid=${userId}&page_num=${currentPageNumOfPosts}`
       );
@@ -163,7 +163,7 @@ export default function PostsList() {
 
 // "use client";
 
-// import useFetch_server from "../custom-hooks/useFetch_server";
+// import fetchData from "../custom-hooks/fetchData";
 // // import { getServerSession } from "next-auth";
 // import { useEffect, useState } from "react";
 // import LoadingSpinner from "../basic-items/LoadingSpinner";
@@ -186,7 +186,7 @@ export default function PostsList() {
 //     setloading(true);
 
 //     try {
-//       const { data } = await useFetch_server(
+//       const { data } = await fetchData(
 //         "GET",
 //         `http://localhost:3000/api/posts?userid=${userId}`
 //       );

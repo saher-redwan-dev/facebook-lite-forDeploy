@@ -1,6 +1,6 @@
 "use client";
 
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import Button from "../basic-items/Button";
 
 import { useForm } from "react-hook-form";
@@ -60,7 +60,7 @@ export default function SendComment({
       addAnimation: true,
     };
 
-    const { data: data_fetch } = await useFetch_server(
+    const { data: data_fetch } = await fetchData(
       "POST",
       "http://localhost:3000/api/comments",
       commentInfo

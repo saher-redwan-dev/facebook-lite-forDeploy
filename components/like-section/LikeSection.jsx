@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import useFetch_server from "../custom-hooks/useFetch_server";
+import fetchData from "../custom-hooks/fetchData";
 import UsersWhoLikedPost from "./UsersWhoLikedPost";
 import { useRouter } from "next/navigation";
 
@@ -29,7 +29,7 @@ export default function LikeSection({
 
     if (isLiked) {
       // operation will be Removing
-      const { data } = await useFetch_server(
+      const { data } = await fetchData(
         "PUT",
         "http://localhost:3000/api/add-remove-like-for-post",
         {
@@ -43,7 +43,7 @@ export default function LikeSection({
       setCountOfLikes(data.likesCountOfPost.likesCountOfPost);
     } else {
       // operation will be Adding
-      const { data } = await useFetch_server(
+      const { data } = await fetchData(
         "PUT",
         "http://localhost:3000/api/add-remove-like-for-post",
         {

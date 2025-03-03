@@ -1,6 +1,6 @@
 "use client";
 
-import useFetch_server from "@/components/custom-hooks/useFetch_server";
+import fetchData from "@/components/custom-hooks/fetchData";
 import UploadButtonItem from "@/components/uploadthing-items/UploadButtonItem";
 import { useGlobalContext } from "@/context/store";
 import { signIn } from "next-auth/react";
@@ -70,7 +70,7 @@ const UserForm = () => {
       },
     };
 
-    const { data: data_fetch } = await useFetch_server(
+    const { data: data_fetch } = await fetchData(
       "POST",
       "http://localhost:3000/api/signup",
       sentObject
