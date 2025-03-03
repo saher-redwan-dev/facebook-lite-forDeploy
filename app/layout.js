@@ -1,11 +1,8 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar-section/Navbar";
 import AuthProvider from "@/lib/AuthProvider";
 import { GlobalContextProvider } from "@/context/store";
 import LoadingEquipment from "@/components/basic-items/LoadingEquipment";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -17,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <AuthProvider>
         <GlobalContextProvider>
-          <body className={`${inter.className} XXdark-theme`}>
+          <body className={`XXdark-theme`}>
             <Navbar />
             <div>{children}</div>
             <LoadingEquipment />

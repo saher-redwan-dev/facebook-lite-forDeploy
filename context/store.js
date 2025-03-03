@@ -54,12 +54,6 @@ export const GlobalContextProvider = ({ children }) => {
       active: false,
     },
     {
-      link: "/admin-page",
-      text: "admin page",
-      icon: HomeSvg,
-      active: false,
-    },
-    {
       link: "",
       text: "settings",
       icon: HomeSvg,
