@@ -4,7 +4,7 @@ import { useGlobalContext } from "@/context/store";
 import LoadingSpinner from "./LoadingSpinner";
 import { useEffect, useRef } from "react";
 
-export default function LoadingOfPreparingFiles() {
+export default function LoadingOfPreparingFilesComponent() {
   const { loadingOfPreparingFiles } = useGlobalContext();
 
   const ref = useRef();
